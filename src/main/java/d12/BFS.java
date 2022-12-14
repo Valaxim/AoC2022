@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.stream.Collectors;
 
-public class ZajebaneZGithuba {
+public class BFS {
 	private int dijkstra(final Square start, final Square end, final List<Square> squares) {
 		final PriorityQueue<Square> queue = new PriorityQueue<>();
 		queue.offer(start);
