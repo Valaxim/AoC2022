@@ -1,7 +1,6 @@
 package d15;
 
 public enum ObjectType {
-	
 	BEACON('B'),
 	SENSOR('S'),
 	NO_SIGNAL('.'),
