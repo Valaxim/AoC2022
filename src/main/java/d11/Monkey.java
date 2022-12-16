@@ -1,6 +1,5 @@
 package d11;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -23,6 +22,7 @@ public class Monkey {
 	private List<Present> presentList = new CopyOnWriteArrayList<>();
 	
 	private int inspectedPresent;
+	
 	public Monkey(int id, Operation operation, Integer operationValue, int divisibleValue, int testPositiveOutput, int testNegativeOutput) {
 		this.id = id;
 		this.operation = operation;

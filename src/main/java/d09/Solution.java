@@ -15,7 +15,7 @@ public class Solution {
 		performAllInstructions(input);
 	}
 	
-	private void performAllInstructions(List<String> input) {
+	protected void performAllInstructions(List<String> input) {
 		for (String instruction : input) {
 			rope.performInstruction(instruction);
 		}

@@ -8,11 +8,11 @@ import java.util.List;
 public class Solution {
 	
 	public List<Integer> createDataFromInput(List<String> input) {
-		List<Integer> values = new ArrayList();
+		List<Integer> values = new ArrayList<>();
 		int value = 0;
 		Iterator var4 = input.iterator();
 		
-		String str= null;
+		String str = null;
 		while (var4.hasNext()) {
 			str = (String) var4.next();
 			if (str.equals("")) {
@@ -34,12 +34,12 @@ public class Solution {
 	}
 	
 	public int getVarTop3(List<Integer> dataFromInput) {
-		int varTop3 = dataFromInput.stream()
+		return  dataFromInput.stream()
 				.sorted(Comparator.reverseOrder())
 				.limit(3)
 				.mapToInt(Integer::intValue)
 				.sum();
-		return varTop3;
+		
 	}
 	
 }

@@ -8,7 +8,7 @@ public enum OpponentMapping {
 	private String code;
 	
 	OpponentMapping(String typeCode) {
-		this.code = new String(typeCode);
+		this.code = typeCode;
 	}
 	
 	public String getValue() {

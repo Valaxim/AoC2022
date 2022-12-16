@@ -2,7 +2,6 @@ package d11;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Solution {
 	
@@ -29,14 +28,11 @@ public class Solution {
 						" have currently: " + m.getPresentList());
 			}
 			List<Long> collect = monkeyList.stream()
-					.map(it -> it.getInspectedPresent())
+					.map(Monkey::getInspectedPresent)
 					.sorted(Comparator.reverseOrder())
-					.collect(Collectors.toList());
+					.toList();
 			System.out.println(collect.get(0) * collect.get(1));
 		}
-
-//		System.out.println("DONE");
-	
 	}
 	
 	
@@ -60,12 +56,12 @@ public class Solution {
 						" have currently: " + m.getPresentList());
 			}
 			List<Long> collect =
-					monkeyList.stream().map(it -> it.getInspectedPresent()).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+					monkeyList.stream()
+							.map(Monkey::getInspectedPresent)
+							.sorted(Comparator.reverseOrder())
+							.toList();
 			System.out.println(collect.get(0) * collect.get(1));
 		}
-
-//		System.out.println("DONE");
-	
 	}
 	
 	

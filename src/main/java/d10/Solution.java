@@ -10,8 +10,8 @@ import java.util.TreeMap;
 public class Solution {
 	private Map<Integer, Long> register = new TreeMap<>();
 	private Long lastValue;
-	private Character LIT_PIXEL = '.';
-	private Character DARK_PIXEL = '#';
+	private static final Character LIT_PIXEL = '.';
+	private static final Character DARK_PIXEL = '#';
 	List<Character> crtScreen = new ArrayList<>();
 	
 	public void compute(List<String> input) {

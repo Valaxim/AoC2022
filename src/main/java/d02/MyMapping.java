@@ -8,7 +8,7 @@ public enum MyMapping {
 	private String code;
 	
 	MyMapping(String typeCode) {
-		this.code = new String(typeCode);
+		this.code = typeCode;
 	}
 	
 	public String getValue() {

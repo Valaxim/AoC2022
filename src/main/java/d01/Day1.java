@@ -14,12 +14,11 @@ public class Day1 {
 		Solution solution = new Solution();
 		List<Integer> dataFromInput = solution.createDataFromInput(input);
 		
-		Integer var = solution.getInteger(dataFromInput);
+		int outputA = solution.getInteger(dataFromInput);
+		int outputB = solution.getVarTop3(dataFromInput);
 		
-		int varTop3 = solution.getVarTop3(dataFromInput);
-		
-		System.out.println("Answer Day1 part 1: " +var);
-		System.out.println("Answer Day1 part 2: " +varTop3);
+		System.out.println("Answer Day1 partA: " + outputA);
+		System.out.println("Answer Day1 partB: " + outputB);
 	}
 }
 

@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class InputParser {
+	private InputParser() {
+	}
 	
 	public static List<Monkey> getTestData() {
 		List<Monkey> monkeyList = new CopyOnWriteArrayList<>();

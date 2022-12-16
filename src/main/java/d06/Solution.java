@@ -10,7 +10,7 @@ public class Solution {
 		for (int i = 0; i < input.length() - requiredDistinctCharacterNumber; i++) {
 			Set<Character> set = new HashSet<>();
 			for (int j = 0; j < requiredDistinctCharacterNumber; j++) {
-				set.add(input.charAt(i+j));
+				set.add(input.charAt(i + j));
 			}
 			if (set.size() == requiredDistinctCharacterNumber) {
 				return i + requiredDistinctCharacterNumber;  // i + 3 + 1 (we don't count from 0 but 1

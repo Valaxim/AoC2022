@@ -12,11 +12,11 @@ public class Day3 {
 		List<String> input = parser.readInputLineByLine("inputDay3.txt");
 		
 		Solution solution = new Solution();
-		int var = solution.compute(input);
-		int varPart2 = solution.computePartB(input);
+		int outputA = solution.compute(input);
+		int outputB = solution.computePartB(input);
 		
-		System.out.println("Answer Day3 part 1: " + var);
-		System.out.println("Answer Day3 part 2: " + varPart2);
+		System.out.println("Answer Day3 partA: " + outputA);
+		System.out.println("Answer Day3 partB: " + outputB);
 	}
 }
 

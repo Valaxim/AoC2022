@@ -13,10 +13,10 @@ public class Day7 {
 		
 		Solution solution = new Solution();
 		solution.compute(input);
-		long var = solution.findSumOfAllDirectoryBelow100kSpace();
-		long var2 = solution.findSmallestDirectoryToDelete();
+		long outputA = solution.findSumOfAllDirectoryBelow100kSpace();
+		long outputB = solution.findSmallestDirectoryToDelete();
 		
-		System.out.println("Answer Day7 part 1: " + var);
-		System.out.println("Answer Day7 part 2: " + var2);
+		System.out.println("Answer Day7 part 1: " + outputA);
+		System.out.println("Answer Day7 part 2: " + outputB);
 	}
 }

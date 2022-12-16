@@ -20,17 +20,13 @@ public class PairOfElves {
 	public boolean fullyContainsTheOther() {
 		if (firstElfStartRange <= secondElfStartRange && firstElfEndRange >= secondElfEndRange) {
 			return true;
-		} else if (secondElfStartRange <= firstElfStartRange && secondElfEndRange >= firstElfEndRange) {
-			return true;
-		} else {
-			return false;
-		}
+		} else return secondElfStartRange <= firstElfStartRange && secondElfEndRange >= firstElfEndRange;
 	}
 	
 	public boolean isOverlapping() {
-		if (secondElfStartRange >= firstElfStartRange && secondElfStartRange <= firstElfEndRange) { // 2 <= 3 <= 8
+		if (secondElfStartRange >= firstElfStartRange && secondElfStartRange <= firstElfEndRange) { // case: 2 <= 3 <= 8
 			return true;
-		} else if (secondElfEndRange >= firstElfStartRange && secondElfEndRange <= firstElfEndRange) { // 2 <= 11 <= 8
+		} else if (secondElfEndRange >= firstElfStartRange && secondElfEndRange <= firstElfEndRange) { // case: 2 <= 11 <= 8
 			return true;
 		} else return fullyContainsTheOther(); // cover case 19-12, 2-93
 	}

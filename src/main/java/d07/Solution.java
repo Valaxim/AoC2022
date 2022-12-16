@@ -9,11 +9,18 @@ import java.util.Map;
 
 public class Solution {
 	
+	private record Directory(String name, List<File> files) {
+	}
+	
+	private record File(String name, long size) {
+	}
+	
 	private Map<String, Directory> directoryMap = new HashMap<>();
 	private Directory currentDirectory;
 	
 	private static final long TOTAL_DISC_SPACE = 70000000;
 	private static final long UPDATE_SIZE = 30000000;
+	
 	public void compute(List<String> input) {
 		performAllInstructions(input);
 	}
@@ -69,6 +76,7 @@ public class Solution {
 				.mapToLong(Long::intValue)
 				.sum();
 	}
+	
 	private Map<String, Long> calculateAllDirectory() {
 		Map<String, Long> directorySize = new HashMap<>();
 		
@@ -92,18 +100,19 @@ public class Solution {
 	public long findSmallestDirectoryToDelete() {
 		Map<String, Long> allDirectorySizes = calculateAllDirectory();
 		Long currentlyUsedSpace = calculateAllDirectory().get("/");
-
-		return  allDirectorySizes.values().stream()
+		
+		return allDirectorySizes.values().stream()
 				.mapToLong(Long::longValue)
 				.filter(it -> TOTAL_DISC_SPACE - currentlyUsedSpace + it > UPDATE_SIZE)
 				.min()
 				.orElse(-1);
-
+		
 	}
+	
 	// to high 17187447
 	private void showDirectory(String instruction) {
 		// do nothing
 	}
 	
-
+	
 }

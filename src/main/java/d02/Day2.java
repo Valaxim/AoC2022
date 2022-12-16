@@ -12,12 +12,10 @@ public class Day2 {
 		List<String> input = parser.readInputLineByLine("inputDay2.txt");
 		
 		int sum = Solution.getSum(input);
-		
-		System.out.println("dupa:" + sum);
+		System.out.println("Answer Day2 partA:" + sum);
 		
 		int sum2 = Solution.getPartB(input);
-		
-		System.out.println("PartB:" + sum2);
+		System.out.println("Answer Day2 partB:" + sum2);
 	}
 }
 

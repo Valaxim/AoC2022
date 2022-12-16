@@ -1,6 +1,5 @@
 package d14;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class CaveWithFloor extends Cave {
@@ -16,7 +15,6 @@ public class CaveWithFloor extends Cave {
 		}
 	}
 	
-	@Override
 	protected boolean stopCondition(int y, int x) {
 		return (caveStructure[y][x] == Structure.WATER.getValue());
 	}

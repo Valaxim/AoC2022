@@ -4,9 +4,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
-public class Node implements Comparable<Node>{
+public class Node implements Comparable<Node> {
 	
 	private int row;
 	private int col;
@@ -78,7 +77,7 @@ public class Node implements Comparable<Node>{
 		return "Node{" +
 				"row=" + row +
 				", col=" + col + "}";
-				
+		
 	}
 	
 	

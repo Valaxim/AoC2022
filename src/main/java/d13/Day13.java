@@ -6,7 +6,6 @@ import utils.ParseUtil;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Day13 {
 	public static void main(String[] args) throws IOException {
@@ -19,7 +18,7 @@ public class Day13 {
 		for (int index = 0, pairNo = 1; index < input.size(); index += 3, pairNo++) {
 			Packet leftPacket = new Packet(input.get(index));
 			Packet rightPacket = new Packet(input.get(index + 1));
-			resultPartA += leftPacket.compareTo(rightPacket) == -1 ? pairNo : 0;
+			resultPartA += leftPacket.compareTo(rightPacket) < 0 ? pairNo : 0;
 		}
 		System.out.println("OutputPartA: " + resultPartA);
 		
@@ -30,11 +29,13 @@ public class Day13 {
 		
 		allPacketList.add(firstPacket);
 		allPacketList.add(secondPacket);
-		for (int index = 0, pairNo = 1; index < input.size(); index += 3, pairNo++) {
+		for (int index = 0; index < input.size(); index += 3) {
 			allPacketList.add(new Packet(input.get(index)));
 			allPacketList.add(new Packet(input.get(index + 1)));
 		}
-		List<Packet> collect = allPacketList.stream().sorted().collect(Collectors.toList());
+		List<Packet> collect = allPacketList.stream()
+				.sorted()
+				.toList();
 		int outputPartB = ((collect.indexOf(firstPacket) + 1) * (collect.indexOf(secondPacket) + 1));
 		System.out.println("OutputPartB: " + outputPartB);
 	}
