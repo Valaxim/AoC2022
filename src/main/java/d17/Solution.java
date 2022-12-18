@@ -15,7 +15,7 @@ public class Solution {
 	private static final int TOWER_WIDTH = 7;
 	private static final long DISTANCE_BETWEEN_GROUND = 3;
 	
-	private Set<State> towerState = new HashSet<>();
+	private final Set<State> towerState = new HashSet<>();
 	
 	private boolean isCycleDetected;
 	
@@ -34,42 +34,8 @@ public class Solution {
 		}
 	}
 	
-	public long computePartA(List<String> input, long amountOfRocks) {
-		tower = new char[55000][TOWER_WIDTH];
-		for (char[] chars : tower) {
-			Arrays.fill(chars, Structure.AIR.getValue());
-		}
-		
-		int rockNumber = 0;
-		int windInstruction = 0;
-		long towerHeight;
-		Rock activeRock = null;
-		char[] charArray = input.get(0).toCharArray();
-		List<MutablePair<Integer, Integer>> values = null;
-		int windPatternLength = charArray.length;
-		
-		while (rockNumber < amountOfRocks + 1) {
-			char windDirection = charArray[windInstruction % windPatternLength];
-			if (activeRock == null) {
-				rockNumber++;
-				activeRock = generateRock(rockNumber);
-				towerHeight = calculateTowerHeight() + DISTANCE_BETWEEN_GROUND;
-				values = activeRock.getValue((int) towerHeight);
-			}
-			
-			blowRock(values, windDirection);
-			windInstruction++;
-			
-			boolean isRockReachGround = fallRock(values);
-			if (isRockReachGround) {
-				activeRock = null;
-			}
-		}
-		return calculateTowerHeight();
-	}
-	
-	public long computePartB(List<String> input, long amountOfRocks) {
-		tower = new char[55000][TOWER_WIDTH];
+	public long compute(List<String> input, long amountOfRocks, boolean isCycleDetectedEnabled) {
+		tower = new char[4000][TOWER_WIDTH];
 		for (char[] chars : tower) {
 			Arrays.fill(chars, Structure.AIR.getValue());
 		}
@@ -100,7 +66,7 @@ public class Solution {
 			
 			boolean isRockReachGround = fallRock(values);
 			if (isRockReachGround) {
-				if (!isCycleDetected) {
+				if (isCycleDetectedEnabled && !isCycleDetected) {
 					cyclePair = detectCycle(rockNumber, windInstruction % windPatternLength, (int) calculateTowerHeight());
 					if (cyclePair != null) {
 						List<Long> longs = reduceInstructionAmount(cyclePair, amountOfRocks, rockNumber);
@@ -217,7 +183,7 @@ public class Solution {
 	}
 	
 	public void drawTower() {
-		int maxY = 3500;
+		int maxY = 4000;
 		
 		for (int y = maxY; y >= 0; y--) {
 			System.out.print("ROW: " + y);

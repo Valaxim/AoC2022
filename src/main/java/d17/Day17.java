@@ -21,7 +21,7 @@ public class Day17 {
 		ParseUtil parseUtil = new ParseUtil();
 		List<String> input = parseUtil.readInputLineByLine("inputDay17.txt");
 		Solution solution = new Solution();
-		long output = solution.computePartA(input, AMOUNT_OF_ROCKS);
+		long output = solution.compute(input, AMOUNT_OF_ROCKS, false);
 		System.out.println("PartA: " + output);
 		
 		
@@ -31,7 +31,7 @@ public class Day17 {
 		
 		start = Instant.now();
 		
-		output = solution.computePartB(input, HUGE_AMOUNT_OF_ROCKS);
+		output = solution.compute(input, HUGE_AMOUNT_OF_ROCKS, true);
 		System.out.println("PartB: " + output);
 		end = Instant.now();
 		
